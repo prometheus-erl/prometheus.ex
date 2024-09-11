@@ -9,12 +9,10 @@ Elixir [Prometheus.io](https://prometheus.io) client based on [Prometheus.erl](h
 
 Starting from v3.0.0 works with Elixir >=1.6 and Erlang >=20. For older versions, please use older tags.
 
-![@skosch dashboard](https://aldusleaf.org/assets/images/2016/09/grafana.jpg)
-
 Dashboard from [Monitoring Elixir apps in 2016: Prometheus and Grafana](https://aldusleaf.org/monitoring-elixir-apps-in-2016-prometheus-and-grafana) by [**@skosch**](https://github.com/skosch).
 
  - IRC: #elixir-lang on Freenode;
- - [Slack](https://elixir-slackin.herokuapp.com/): #prometheus channel - [Browser](https://elixir-lang.slack.com/messages/prometheus) or App(slack://elixir-lang.slack.com/messages/prometheus).
+ - [Slack](https://elixir-slackin.herokuapp.com/): #prometheus channel - [Browser](https://elixir-lang.slack.com/messages/prometheus) or [App](slack://elixir-lang.slack.com/messages/prometheus).
 
 ## Example
 

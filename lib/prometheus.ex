@@ -65,7 +65,7 @@ defmodule Prometheus do
   if it isn't.
 
   Both `new/1` and `declare/1` accept options as
-  [Keyword](http://elixir-lang.org/docs/stable/elixir/Keyword.html).
+  [Keyword](https://hexdocs.pm/elixir/Keyword.html).
   Common options are:
 
    - name - metric name, can be an atom or a string (required);

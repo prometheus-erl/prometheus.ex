@@ -18,7 +18,7 @@ defmodule Prometheus.CollectorTest do
              Prometheus.Collector.collect_mf(:prometheus_counter, fn mf ->
                :io.format("~p", [mf])
              end)
-           end) == "{'MetricFamily',<<\"test_counter\">>,\"qwe_qwe\",'COUNTER',
+           end) == "{'MetricFamily',<<\"test_counter\">>,<<\"qwe_qwe\">>,'COUNTER',
                 [{'Metric',[],undefined,
                            {'Counter',1},
                            undefined,undefined,undefined,undefined}]}"
@@ -39,7 +39,7 @@ defmodule Prometheus.CollectorTest do
              Prometheus.Collector.collect_mf(:qwe, :prometheus_counter, fn mf ->
                :io.format("~p", [mf])
              end)
-           end) == "{'MetricFamily',<<\"test_counter_qwe\">>,\"qwe_qwe\",'COUNTER',
+           end) == "{'MetricFamily',<<\"test_counter_qwe\">>,<<\"qwe_qwe\">>,'COUNTER',
                 [{'Metric',[],undefined,
                            {'Counter',1},
                            undefined,undefined,undefined,undefined}]}"

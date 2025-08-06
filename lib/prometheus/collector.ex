@@ -21,7 +21,7 @@ defmodule Prometheus.Collector do
   - `deregister_cleanup(registry)` - called when collector unregistered by
   `registry`. If collector is stateful you can put cleanup code here.
 
-  Example (simplified [`:prometheus_vm_memory_collector`](https://github.com/deadtrickster/prometheus.erl/blob/master/doc/prometheus_vm_memory_collector.md)):
+  Example (simplified [`:prometheus_vm_memory_collector`](https://github.com/prometheus-erl/prometheus.erl/blob/master/doc/prometheus_vm_memory_collector.md)):
 
   ```
   iex(3)> defmodule Prometheus.VMMemoryCollector do

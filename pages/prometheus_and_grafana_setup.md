@@ -16,7 +16,7 @@ Here are the basic Mix dependencies you’ll want to grab for your Phoenix/Ecto 
 Other data collectors are available.
 
 ```elixir
-{:prometheus_ex, "~> 3.0"},
+{:prometheus_ex, "~> 4.0"},
 {:prometheus_ecto, "~> 1.0"},
 {:prometheus_phoenix, "~> 1.0"},
 {:prometheus_plugs, "~> 1.0"},

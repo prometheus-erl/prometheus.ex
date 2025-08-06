@@ -1,8 +1,8 @@
 defmodule PrometheusEx.Mixfile do
   use Mix.Project
 
-  @source_url "https://github.com/deadtrickster/prometheus.ex"
-  @version "4.0.0"
+  @source_url "https://github.com/prometheus-erl/prometheus.ex"
+  @version "5.0.0"
 
   def project do
     [
@@ -16,12 +16,18 @@ defmodule PrometheusEx.Mixfile do
       name: "Prometheus.ex",
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
-      preferred_cli_env: [coveralls: :test, "coveralls.html": :test],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ],
       docs: [
         main: Prometheus,
         source_ref: "v#{@version}",
         source_url: @source_url,
         extras: [
+          "pages/prometheus_and_grafana_setup.md",
           "pages/Mnesia Collector.md",
           "pages/VM Memory Collector.md",
           "pages/VM Statistics Collector.md",
@@ -44,7 +50,7 @@ defmodule PrometheusEx.Mixfile do
 
   defp package do
     [
-      maintainers: ["Ilya Khaprov"],
+      maintainers: ["Ilya Khaprov", "Nelson Vides"],
       licenses: ["MIT"],
       links: %{
         "GitHub" => @source_url,
@@ -60,14 +66,14 @@ defmodule PrometheusEx.Mixfile do
 
   defp deps do
     [
-      {:prometheus, "~> 5.0"},
+      {:prometheus, "~> 6.0"},
 
       ## test
       {:credo, "~> 1.0", only: [:dev, :test]},
       {:dialyxir, "~> 1.4", only: [:dev]},
-      {:earmark, "~> 1.3", only: [:dev]},
-      {:ex_doc, "~> 0.19", only: [:dev]},
-      {:excoveralls, "~> 0.10", only: [:test]}
+      {:earmark, "~> 1.4", only: [:dev]},
+      {:ex_doc, "~> 0.38", only: [:dev]},
+      {:excoveralls, "~> 0.18", only: [:test]}
     ]
   end
 end

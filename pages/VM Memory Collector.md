@@ -12,7 +12,7 @@ Also provides basic (D)ETS statistics.
 
 <ul>
   <li>
-    <pre>erlang_vm_memory_atom_bytes_total</pre>
+    <pre>erlang_vm_memory_atom_bytes</pre>
 	Type: gauge.<br/>
     Labels:
     <ul style="list-style:circle">
@@ -23,7 +23,7 @@ Also provides basic (D)ETS statistics.
     This memory is part of the memory presented as system memory.
   </li>
   <li>
-    <pre>erlang_vm_memory_bytes_total</pre>
+    <pre>erlang_vm_memory_bytes</pre>
 	Type: gauge.<br/>
     Labels:
     <ul style="list-style:circle">
@@ -44,7 +44,7 @@ Also provides basic (D)ETS statistics.
     Erlang VM ETS Tables count.
   </li>
   <li>
-    <pre>erlang_vm_memory_processes_bytes_total</pre>
+    <pre>erlang_vm_memory_processes_bytes</pre>
 	Type: gauge.<br/>
     Labels:
     <ul style="list-style:circle">
@@ -54,7 +54,7 @@ Also provides basic (D)ETS statistics.
     The total amount of memory currently allocated for the Erlang processes.
   </li>
   <li>
-    <pre>erlang_vm_memory_system_bytes_total</pre>
+    <pre>erlang_vm_memory_system_bytes</pre>
 	Type: gauge.<br/>
     Labels:
     <ul style="list-style:circle">
@@ -73,11 +73,11 @@ Metrics exported by this collector can be configured via
 `:vm_memory_collector_metrics` key of `:prometheus` app environment.
 
 Available options:
- - `:atom_bytes_total` for `erlang_vm_memory_atom_bytes_total`;
- - `:bytes_total` for `erlang_vm_memory_bytes_total`;
+ - `:atom_bytes_total` for `erlang_vm_memory_atom_bytes`;
+ - `:bytes_total` for `erlang_vm_memory_bytes`;
  - `:dets_tables` for `erlang_vm_dets_tables`;
  - `:ets_tables` for `erlang_vm_ets_tables`;
- - `:processes_bytes_total` for `erlang_vm_memory_processes_bytes_total`;
- - `:system_bytes_total` for `erlang_vm_memory_system_bytes_total`.
+ - `:processes_bytes_total` for `erlang_vm_memory_processes_bytes`;
+ - `:system_bytes_total` for `erlang_vm_memory_system_bytes`.
 
 By default all metrics are enabled.

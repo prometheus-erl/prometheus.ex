@@ -1,18 +1,15 @@
 # Prometheus.ex
-[![Build Status](https://github.com/deadtrickster/prometheus.ex/workflows/build/badge.svg)](https://github.com/deadtrickster/prometheus.ex/actions?query=branch%3Amaster)
-[![Hex.pm](https://img.shields.io/hexpm/dt/prometheus_ex.svg?maxAge=2592000)](https://hex.pm/packages/prometheus_ex)
-[![Coverage Status](https://coveralls.io/repos/github/deadtrickster/prometheus.ex/badge.svg?branch=master)](https://coveralls.io/github/deadtrickster/prometheus.ex?branch=master)
+
 [![Hex.pm](https://img.shields.io/hexpm/v/prometheus_ex.svg?maxAge=2592000)](https://hex.pm/packages/prometheus_ex)
-[![Documentation](https://img.shields.io/badge/documentation-on%20hexdocs-green.svg)](https://hexdocs.pm/prometheus_ex/)
+[![Hex.pm](https://img.shields.io/hexpm/dt/prometheus_ex.svg?maxAge=2592000)](https://hex.pm/packages/prometheus_ex)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/prometheus_ex/)
+[![GitHub Actions](https://github.com/prometheus-erl/prometheus.ex/actions/workflows/main.yml/badge.svg)](https://github.com/prometheus-erl/prometheus.ex/actions/workflows/main.yml)
+[![Coverage Status](https://coveralls.io/repos/github/prometheus-erl/prometheus.ex/badge.svg?branch=master)](https://coveralls.io/github/prometheus-erl/prometheus.ex?branch=master)
+[![Codecov](https://codecov.io/github/prometheus-erl/prometheus.ex/graph/badge.svg?token=G9HB5UKNIY)](https://codecov.io/github/prometheus-erl/prometheus.ex)
 
-Elixir [Prometheus.io](https://prometheus.io) client based on [Prometheus.erl](https://github.com/deadtrickster/prometheus.erl).
-
-Starting from v3.0.0 works with Elixir >=1.6 and Erlang >=20. For older versions, please use older tags.
+Elixir [Prometheus.io](https://prometheus.io) client based on [Prometheus.erl](https://github.com/prometheus-erl/prometheus.erl).
 
 Dashboard from [Monitoring Elixir apps in 2016: Prometheus and Grafana](https://aldusleaf.org/monitoring-elixir-apps-in-2016-prometheus-and-grafana) by [**@skosch**](https://github.com/skosch).
-
- - IRC: #elixir-lang on Freenode;
- - [Slack](https://elixir-slackin.herokuapp.com/): #prometheus channel - [Browser](https://elixir-lang.slack.com/messages/prometheus) or [App](slack://elixir-lang.slack.com/messages/prometheus).
 
 ## Example
 
@@ -56,18 +53,18 @@ you don't have to call setup manually.
 Please read how to [measure durations correctly with prometheus.ex](https://hexdocs.pm/prometheus_ex/time.html#content).
 
 ## Integrations / Collectors / Instrumenters
- - [Ecto collector](https://github.com/deadtrickster/prometheus-ecto)
+ - [Ecto collector](https://github.com/prometheus-erl/prometheus-ecto)
  - [Elli middleware](https://github.com/elli-lib/elli_prometheus)
  - [Extatus - App to report metrics to Prometheus from Elixir GenServers](https://github.com/gmtprime/extatus)
- - [Plugs Instrumenter/Exporter](https://github.com/deadtrickster/prometheus-plugs)
+ - [Plugs Instrumenter/Exporter](https://github.com/prometheus-erl/prometheus-plugs)
  - [Fuse plugin](https://github.com/jlouis/fuse#fuse_stats_prometheus)
  - [OS process info Collector](https://hex.pm/packages/prometheus_process_collector) (Linux-only)
- - [Phoenix instrumenter](https://github.com/deadtrickster/prometheus-phoenix)
- - [RabbitMQ Exporter](https://github.com/deadtrickster/prometheus_rabbitmq_exporter)
+ - [Phoenix instrumenter](https://github.com/prometheus-erl/prometheus-phoenix)
+ - [RabbitMQ Exporter](https://github.com/prometheus-erl/prometheus_rabbitmq_exporter)
 
 ## Dashboards
 
-- [Beam Dashboards](https://github.com/deadtrickster/beam-dashboards).
+- [Beam Dashboards](https://github.com/prometheus-erl/beam-dashboards).
 
 ## Installation
 

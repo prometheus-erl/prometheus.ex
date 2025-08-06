@@ -40,7 +40,7 @@ defmodule Prometheus do
    - [OS process info Collector](https://hex.pm/packages/prometheus_process_collector)
    (Linux-only);
    - [Phoenix Instrumenter](https://hex.pm/packages/prometheus_phoenix);
-   - [RabbitMQ Exporter](https://github.com/deadtrickster/prometheus_rabbitmq_exporter).
+   - [RabbitMQ Exporter](https://github.com/prometheus-erl/prometheus_rabbitmq_exporter).
 
   ## Erlang VM Collectors
    - [Memory Collector](vm-memory-collector.html);
@@ -53,8 +53,7 @@ defmodule Prometheus do
 
   ### Standard Metrics & Registry
 
-   - `Prometheus.Metric.Counter` - counter metric, to track counts of events or running
-   totals;
+   - `Prometheus.Metric.Counter` - counter metric, to track counts of events or running totals;
    - `Prometheus.Metric.Gauge` - gauge metric, to report instantaneous values;
    - `Prometheus.Metric.Histogram` - histogram metric, to track distributions of events;
    - `Prometheus.Metric.Summary` - summary metric, to track the size of events;

@@ -8,11 +8,11 @@ using `erlang:convert_time_unit`.
 However as `erlang:convert_time_unit` documentation
 [warns](http://erlang.org/doc/man/erlang.html#convert_time_unit-3):
 
-```
-You may lose accuracy and precision when converting between  time units.
-In order to minimize such loss, collect all data at native time unit and
-do the conversion on the end result.
-```
+> #### Warning {: .warning}
+>
+> You may lose accuracy and precision when converting between  time units.
+> In order to minimize such loss, collect all data at native time unit and
+> do the conversion on the end result.
 
 and because Prometheus mandates support for floats,
 `set_duration/observe_duration` functions always work with
@@ -23,12 +23,12 @@ or implicitly via metric name (preferred, since prometheus best practices
 guide insists on `<name>_duration_<unit>` metric name format).
 
 Possible units:
- - :microseconds;
- - :milliseconds;
- - :seconds;
- - :minutes;
- - :hours;
- - :days.
+ - `:microseconds`;
+ - `:milliseconds`;
+ - `:seconds`;
+ - `:minutes`;
+ - `:hours`;
+ - `:days`.
 
 Histogram also converts buckets bounds to native units if
 duration_unit is provided. It converts it back when scraping or

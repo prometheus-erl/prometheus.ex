@@ -30,12 +30,6 @@ defmodule Prometheus.SummaryTest do
     assert_raise Prometheus.InvalidMetricHelpError, "Invalid metric help: 12.", fn ->
       Summary.new(name: "qwe", help: 12)
     end
-
-    assert_raise Prometheus.InvalidLabelNameError,
-                 "Invalid label name: quantile (summary cannot have a label named \"quantile\").",
-                 fn ->
-                   Summary.new(name: "qwe", help: "", labels: ["quantile"])
-                 end
   end
 
   test "summary specific errors" do

@@ -32,7 +32,8 @@ defmodule PrometheusEx.Mixfile do
           "pages/VM Memory Collector.md",
           "pages/VM Statistics Collector.md",
           "pages/VM System Info Collector.md",
-          "pages/Time.md"
+          "pages/Time.md",
+          "LICENSE"
         ]
       ]
     ]

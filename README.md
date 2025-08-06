@@ -4,7 +4,6 @@
 [![Hex.pm](https://img.shields.io/hexpm/dt/prometheus_ex.svg?maxAge=2592000)](https://hex.pm/packages/prometheus_ex)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/prometheus_ex/)
 [![GitHub Actions](https://github.com/prometheus-erl/prometheus.ex/actions/workflows/main.yml/badge.svg)](https://github.com/prometheus-erl/prometheus.ex/actions/workflows/main.yml)
-[![Coverage Status](https://coveralls.io/repos/github/prometheus-erl/prometheus.ex/badge.svg?branch=master)](https://coveralls.io/github/prometheus-erl/prometheus.ex?branch=master)
 [![Codecov](https://codecov.io/github/prometheus-erl/prometheus.ex/graph/badge.svg?token=G9HB5UKNIY)](https://codecov.io/github/prometheus-erl/prometheus.ex)
 
 Elixir [Prometheus.io](https://prometheus.io) client based on [Prometheus.erl](https://github.com/prometheus-erl/prometheus.erl).

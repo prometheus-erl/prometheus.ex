@@ -14,27 +14,47 @@ jobs:
     name: Elixir ${{ matrix.elixir }} OTP ${{ matrix.otp }}
     strategy:
       matrix:
-        otp: ['27', '26', '25']
-        elixir: ['1.18.3', '1.17.3', '1.16.3']
+        otp: ['28', '27', '26']
+        elixir: ['1.18', '1.17', '1.16']
         exclude:
           # Unsupported
-          - elixir: '1.16.3'
+          - elixir: '1.17'
+            otp: '28'
+          - elixir: '1.16'
             otp: '27'
-    runs-on: 'ubuntu-24.04'
+          - elixir: '1.16'
+            otp: '28'
+    runs-on: 'ubuntu-latest'
     steps:
       - uses: actions/checkout@v4
       - uses: erlef/setup-beam@v1
         with:
           otp-version: ${{ matrix.otp }}
           elixir-version: ${{ matrix.elixir }}
+      - uses: actions/cache@v4
+        id: cache
+        with:
+          path: |
+            deps
+            _build
+          key: v1-${{runner.os}}-${{matrix.elixir}}-${{matrix.otp}}-${{hashFiles('**/mix.lock')}}
       - run: mix deps.get
+      - run: mix deps.unlock --check-unused
+      - run: mix hex.audit
       - run: mix compile --warnings-as-errors
       - run: mix format --check-formatted
-      - run: mix coveralls
-        if: ${{ (matrix.otp == '27') && (matrix.elixir == '1.18.3' ) }}
-      - run: mix dialyzer
-        if: ${{ (matrix.otp == '27') && (matrix.elixir == '1.18.3' ) }}
       - run: mix credo --strict --all
-        if: ${{ (matrix.otp == '27') && (matrix.elixir == '1.18.3' ) }}
+        if: ${{ (matrix.otp == '28') && (matrix.elixir == '1.18' ) }}
+      - run: mix dialyzer
+        if: ${{ (matrix.otp == '28') && (matrix.elixir == '1.18' ) }}
       - run: mix docs
-        if: ${{ (matrix.otp == '27') && (matrix.elixir == '1.18.3' ) }}
+        if: ${{ (matrix.otp == '28') && (matrix.elixir == '1.18' ) }}
+      - run: MIX_ENV=test mix coveralls.json
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        if: ${{ (matrix.otp == '28') && (matrix.elixir == '1.18' ) }}
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: prometheus-erl/prometheus.ex
+          fail_ci_if_error: true
+          verbose: true

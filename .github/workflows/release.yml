@@ -1,0 +1,32 @@
+name: Upload release
+
+on:
+  push:
+    tags:
+    - 'v[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    container:
+      image: elixir:1.18
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - run: chown --recursive --reference=/ .
+      - run: git config --global --add safe.directory '*'
+      - run: mix compile --warnings-as-errors
+      - run: mix format --check-formatted
+      - run: mix dialyzer
+      - run: mix credo --strict --all
+      - run: mix docs
+      - uses: ncipollo/release-action@v1
+        with:
+          generateReleaseNotes: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish to hex.pm
+        env:
+          HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
+        run: mix hex.publish --yes

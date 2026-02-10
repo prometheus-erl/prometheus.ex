@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         otp: ['28', '27', '26']
-        elixir: ['1.18', '1.17', '1.16']
+        elixir: ['1.19', '1.18', '1.17', '1.16']
         exclude:
           # Unsupported
           - elixir: '1.17'
@@ -26,12 +26,12 @@ jobs:
             otp: '28'
     runs-on: 'ubuntu-latest'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: erlef/setup-beam@v1
         with:
           otp-version: ${{ matrix.otp }}
           elixir-version: ${{ matrix.elixir }}
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: cache
         with:
           path: |

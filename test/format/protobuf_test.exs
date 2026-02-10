@@ -37,8 +37,8 @@ defmodule Prometheus.Format.ProtobufTest do
     Counter.inc([name: :dtest], 1.5)
 
     assert <<29, 10, 5, 100, 116, 101, 115, 116, 18, 5, 113, 119, 34, 92, 101, 24, 0, 34,
-             11, 26, 9, 9, 0, 0, 0, 0, 0, 0, 26,
-             64>> == Prometheus.Format.Protobuf.format()
+             11, 26, 9, 9, 0, 0, 0, 0, 0, 0, 26, 64>> ==
+             Prometheus.Format.Protobuf.format()
   end
 
   test "summary" do
@@ -49,8 +49,8 @@ defmodule Prometheus.Format.ProtobufTest do
     assert <<63, 10, 14, 111, 114, 100, 101, 114, 115, 95, 115, 117, 109, 109, 97, 114,
              121, 18, 28, 84, 114, 97, 99, 107, 32, 111, 114, 100, 101, 114, 115, 32, 99,
              111, 117, 110, 116, 47, 116, 111, 116, 97, 108, 32, 115, 117, 109, 24, 2, 34,
-             13, 34, 11, 8, 2, 17, 0, 0, 0, 0, 0, 0, 57,
-             64>> == Prometheus.Format.Protobuf.format()
+             13, 34, 11, 8, 2, 17, 0, 0, 0, 0, 0, 0, 57, 64>> ==
+             Prometheus.Format.Protobuf.format()
   end
 
   test "dsummary" do
@@ -59,8 +59,8 @@ defmodule Prometheus.Format.ProtobufTest do
     Summary.observe([name: :dsummary], 2.7)
 
     assert <<32, 10, 8, 100, 115, 117, 109, 109, 97, 114, 121, 18, 3, 113, 119, 101, 24,
-             2, 34, 13, 34, 11, 8, 2, 17, 205, 204, 204, 204, 204, 204, 16,
-             64>> == Prometheus.Format.Protobuf.format()
+             2, 34, 13, 34, 11, 8, 2, 17, 205, 204, 204, 204, 204, 204, 16, 64>> ==
+             Prometheus.Format.Protobuf.format()
   end
 
   test "histogram" do
@@ -91,8 +91,8 @@ defmodule Prometheus.Format.ProtobufTest do
              8, 3, 17, 0, 0, 0, 0, 0, 0, 89, 64, 26, 11, 8, 6, 17, 0, 0, 0, 0, 0, 192,
              114, 64, 26, 11, 8, 7, 17, 0, 0, 0, 0, 0, 64, 127, 64, 26, 11, 8, 8, 17, 0,
              0, 0, 0, 0, 112, 135, 64, 26, 11, 8, 9, 17, 0, 0, 0, 0, 0, 64, 143, 64, 26,
-             11, 8, 9, 17, 0, 0, 0, 0, 0, 0, 240,
-             127>> == Prometheus.Format.Protobuf.format()
+             11, 8, 9, 17, 0, 0, 0, 0, 0, 0, 240, 127>> ==
+             Prometheus.Format.Protobuf.format()
   end
 
   test "dhistogram" do
@@ -143,7 +143,7 @@ defmodule Prometheus.Format.ProtobufTest do
              64, 26, 11, 8, 0, 17, 0, 0, 0, 0, 0, 0, 89, 64, 26, 11, 8, 1, 17, 0, 0, 0, 0,
              0, 192, 114, 64, 26, 11, 8, 2, 17, 0, 0, 0, 0, 0, 64, 127, 64, 26, 11, 8, 3,
              17, 0, 0, 0, 0, 0, 112, 135, 64, 26, 11, 8, 5, 17, 0, 0, 0, 0, 0, 64, 143,
-             64, 26, 11, 8, 6, 17, 0, 0, 0, 0, 0, 0, 240,
-             127>> == Prometheus.Format.Protobuf.format()
+             64, 26, 11, 8, 6, 17, 0, 0, 0, 0, 0, 0, 240, 127>> ==
+             Prometheus.Format.Protobuf.format()
   end
 end
